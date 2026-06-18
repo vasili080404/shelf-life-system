@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Система контроля сроков годности — дипломный проект</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <p class="kicker">Дипломная работа · 2026 · BGU Кафедра ЦСиТ</p>
+    <h1>Система контроля сроков годности<br>на АЗС №16 «Поколюбичи»</h1>
+    <p class="subtitle">Автоматизация управления товарными запасами с принципом FEFO,
+      интеллектуальным авто-заказом и блокировкой просроченных продаж.
+      Десктопное приложение на Python + CustomTkinter + SQLite.</p>
+    <div class="badges">
+      <span class="badge">Python 3.11</span>
+      <span class="badge">CustomTkinter</span>
+      <span class="badge">SQLite</span>
+      <span class="badge">FEFO</span>
+      <span class="badge">BPMN 2.0</span>
+      <span class="badge">3&nbsp;320 строк</span>
+      <span class="badge">17 модулей</span>
+    </div>
+    <div class="cta">
+      <a href="#screenshots" class="btn btn-primary">Смотреть скриншоты</a>
+      <a href="#architecture" class="btn btn-secondary">Архитектура</a>
+      <a href="#features" class="btn btn-secondary">Функции</a>
+    </div>
+  </div>
+</header>
+
+<section class="container kpi">
+  <div class="kpi-card">
+    <div class="kpi-value">60–70%</div>
+    <div class="kpi-label">сокращение ручных операций</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">≥50%</div>
+    <div class="kpi-label">снижение потерь от просрочки</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">40–50%</div>
+    <div class="kpi-label">рост точности авто-заказов</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">100%</div>
+    <div class="kpi-label">исключение продаж просрочки</div>
+  </div>
+</section>
+
+<section class="container" id="problem">
+  <h2>Проблема</h2>
+  <p class="lead">На АЗС №16 ручной контроль сроков годности приводил к ошибкам, потерям
+  выручки и зависимости от человеческого фактора. Дублирование данных между 1С
+  и ARM Оператор, отсутствие автоблокировки просроченных продаж, отсутствие
+  FEFO-логики при формировании заказов.</p>
+
+  <h2>Решение</h2>
+  <p class="lead">Прототип системы, реализующий принцип FEFO (First Expired — First Out),
+  автоматическое определение статуса партий (Normal / Critical / Expired),
+  блокировку продаж просроченного товара, интеллектуальный авто-заказ на основе
+  средних продаж и планограммы, возврат поставщику и списание с формированием акта.</p>
+</section>
+
+<section class="container" id="features">
+  <h2>Реализованные функции</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Автоматический расчёт статуса</h3>
+      <p>Normal · Critical (1–3 дня) · Expired. Цветовая индикация в интерфейсе оператора,
+      автоматическое определение по дате истечения.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧮</div>
+      <h3>Авто-расчёт скидок</h3>
+      <p>Процент скидки для критических партий рассчитывается автоматически
+      на основе настраиваемых правил.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>FEFO-выбор партии</h3>
+      <p>При сканировании товара автоматически выбирается партия с ближайшим
+      сроком истечения. Продажа просрочки заблокирована.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛒</div>
+      <h3>Интеллектуальный авто-заказ</h3>
+      <p>Учёт средних продаж за 14 дней, текущих остатков, планограммы,
+      критичности сроков. Рекомендация формируется автоматически.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗑️</div>
+      <h3>Списание просрочки</h3>
+      <p>Массовое списание просроченных партий с автоматическим
+      формированием акта и логированием в ActionLog.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">↩️</div>
+      <h3>Возврат поставщику</h3>
+      <p>Автоматический выбор партий с критическим сроком (≤14 дней),
+      формирование акта возврата с указанием причины.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Планограмма</h3>
+      <p>Цифровое управление размещением товаров на полках с указанием
+      минимальных и максимальных остатков.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Отчёты</h3>
+      <p>Каталог, история продаж, потери за 7 дней, история списаний,
+      мои заказы, детали заказа, предложение авто-заказа. Экспорт TXT и Excel.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔐</div>
+      <h3>Полный аудит</h3>
+      <p>Каждое действие пользователя логируется в таблицу ActionLog:
+      кто, когда, что изменил.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="architecture">
+  <h2>Архитектура</h2>
+  <p class="lead">Трёхуровневая модульная архитектура согласно BPMN-диаграммам
+  дипломной работы. Модули связаны только через общую БД, что обеспечивает
+  минимальное сопряжение и простоту тестирования.</p>
+
+  <div class="arch">
+    <div class="layer">
+      <div class="layer-title">Presentation Layer <span class="layer-sub">ui/</span></div>
+      <div class="layer-items">
+        <span>app.py</span>
+        <span>operator_tab.py</span>
+        <span>senior_tab.py</span>
+        <span>dialogs.py</span>
+        <span>notify.py</span>
+      </div>
+    </div>
+    <div class="layer-arrow">▼</div>
+    <div class="layer">
+      <div class="layer-title">Business Logic Layer <span class="layer-sub">modules/</span></div>
+      <div class="layer-items">
+        <span>ShelfLifeControl</span>
+        <span>AutoOrder</span>
+        <span>WriteOff</span>
+        <span>Returns</span>
+        <span>Reports</span>
+        <span>AuditAndLog</span>
+        <span>Planogram</span>
+      </div>
+    </div>
+    <div class="layer-arrow">▼</div>
+    <div class="layer">
+      <div class="layer-title">Data Access Layer <span class="layer-sub">modules/database.py</span></div>
+      <div class="layer-items">
+        <span>Database class · 10 таблиц SQLite · context manager ·
+        rows_to_dicts · CRUD-методы</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="tech">
+  <h2>Технологический стек</h2>
+  <div class="tech-grid">
+    <div><strong>Язык:</strong> Python 3.11</div>
+    <div><strong>GUI:</strong> CustomTkinter (модерн-обёртка над Tkinter)</div>
+    <div><strong>БД:</strong> SQLite (10 таблиц, WAL-режим)</div>
+    <div><strong>Экспорт отчётов:</strong> openpyxl (Excel), plain text (TXT)</div>
+    <div><strong>Звук:</strong> winsound (системные уведомления)</div>
+    <div><strong>Тестирование:</strong> ручные smoke-тесты + интеграционный test_modules.py</div>
+    <div><strong>Объём кода:</strong> 3 320 строк Python в 17 файлах</div>
+    <div><strong>Методология требований:</strong> FURPS+</div>
+  </div>
+</section>
+
+<section class="container" id="screenshots">
+  <h2>Скриншоты приложения</h2>
+
+  <h3 class="section-h3">Оператор (касса)</h3>
+  <div class="shots">
+    <a href="images/fig2_5_operator_main.png" target="_blank" class="shot">
+      <img src="images/fig2_5_operator_main.png" alt="Главная вкладка оператора" loading="lazy">
+      <div class="shot-caption">Главная вкладка оператора</div>
+    </a>
+    <a href="images/fig2_6_operator_search.png" target="_blank" class="shot">
+      <img src="images/fig2_6_operator_search.png" alt="Поиск товара по штрих-коду" loading="lazy">
+      <div class="shot-caption">Поиск товара по штрих-коду</div>
+    </a>
+  </div>
+
+  <h3 class="section-h3">Старший оператор</h3>
+  <div class="shots">
+    <a href="images/fig2_5b_senior_main.png" target="_blank" class="shot">
+      <img src="images/fig2_5b_senior_main.png" alt="Дашборд старшего оператора" loading="lazy">
+      <div class="shot-caption">Дашборд старшего оператора · Quick indicators</div>
+    </a>
+    <a href="images/fig2_10_smart_order.png" target="_blank" class="shot">
+      <img src="images/fig2_10_smart_order.png" alt="Интеллектуальный авто-заказ" loading="lazy">
+      <div class="shot-caption">Интеллектуальный авто-заказ</div>
+    </a>
+    <a href="images/fig2_13_my_orders.png" target="_blank" class="shot">
+      <img src="images/fig2_13_my_orders.png" alt="Мои заказы" loading="lazy">
+      <div class="shot-caption">Сохранённые авто-заказы</div>
+    </a>
+  </div>
+
+  <h3 class="section-h3">Отчёты и аналитика</h3>
+  <div class="shots">
+    <a href="images/fig2_7_all_products.png" target="_blank" class="shot">
+      <img src="images/fig2_7_all_products.png" alt="Каталог всех товаров" loading="lazy">
+      <div class="shot-caption">Каталог всех товаров</div>
+    </a>
+    <a href="images/fig2_8_sales_history.png" target="_blank" class="shot">
+      <img src="images/fig2_8_sales_history.png" alt="История продаж" loading="lazy">
+      <div class="shot-caption">История продаж</div>
+    </a>
+    <a href="images/fig2_9_losses.png" target="_blank" class="shot">
+      <img src="images/fig2_9_losses.png" alt="Потери от просрочки" loading="lazy">
+      <div class="shot-caption">Потери от просрочки за 7 дней</div>
+    </a>
+  </div>
+
+  <h3 class="section-h3">Управление остатками</h3>
+  <div class="shots">
+    <a href="images/fig2_11_writeoff.png" target="_blank" class="shot">
+      <img src="images/fig2_11_writeoff.png" alt="Списание просроченных товаров" loading="lazy">
+      <div class="shot-caption">Списание просроченных товаров</div>
+    </a>
+    <a href="images/fig2_12_writeoff_history.png" target="_blank" class="shot">
+      <img src="images/fig2_12_writeoff_history.png" alt="История списаний" loading="lazy">
+      <div class="shot-caption">История списаний</div>
+    </a>
+    <a href="images/fig2_14_planogram.png" target="_blank" class="shot">
+      <img src="images/fig2_14_planogram.png" alt="Планограмма" loading="lazy">
+      <div class="shot-caption">Планограмма торгового зала</div>
+    </a>
+    <a href="images/fig2_15_returns.png" target="_blank" class="shot">
+      <img src="images/fig2_15_returns.png" alt="Возвраты поставщику" loading="lazy">
+      <div class="shot-caption">Возвраты поставщику</div>
+    </a>
+    <a href="images/fig2_16_action_log.png" target="_blank" class="shot">
+      <img src="images/fig2_16_action_log.png" alt="Журнал действий" loading="lazy">
+      <div class="shot-caption">Журнал действий (ActionLog)</div>
+    </a>
+  </div>
+</section>
+
+<section class="container" id="howto">
+  <h2>Как запустить локально</h2>
+  <div class="code-block">
+<pre><code># 1. Клонировать репозиторий
+git clone https://github.com/vasili080404/shelf-life-system.git
+cd shelf-life-system
+
+# 2. Установить зависимости
+pip install customtkinter openpyxl
+
+# 3. Инициализировать БД
+python init_db.py
+
+# 4. Запустить приложение
+python app.py
+
+# Опционально: режим скриншотов для диплома
+python app.py --tab=senior --screenshots=D:\shots --delay=2000
+
+# CLI-режимы: --tab=senior, --open=my_orders,
+# --open=writeoff_history, --open=action_log, --open=planogram
+</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>Дипломная работа · 2026 · BGU, кафедра ЦСиТ, специальность
+    «Управление информационными ресурсами» (1-26 03 01)</p>
+    <p>Прототип готов к пилотному внедрению на АЗС №16 и масштабированию
+    на сеть автозаправочных станций РУП «Белоруснефть-Гомелоблнефтепродукт».</p>
+  </div>
+</footer>
+
+</body>
+</html>
