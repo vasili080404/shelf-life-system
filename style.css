@@ -339,6 +339,11 @@ h2 {
   margin-top: 16px;
 }
 
+.shots-1 {
+  grid-template-columns: 1fr;
+  max-width: 980px;
+}
+
 .shot {
   display: block;
   background: var(--color-card);
