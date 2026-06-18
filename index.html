@@ -302,9 +302,10 @@ git clone https://github.com/vasili080404/shelf-life-system.git
 cd shelf-life-system
 
 # 2. Install dependencies
-pip install customtkinter openpyxl
+pip install -r requirements.txt
 
-# 3. Initialize the database
+# 3. Move into the source directory and initialize the database
+cd shelf_life_system
 python init_db.py
 
 # 4. Launch the application
