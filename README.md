@@ -31,24 +31,28 @@ Diploma project · BSU, Department of Digital Systems and Technologies · 2026.
 ## Project structure
 
 ```
-shelf_life_system/
-├── app.py                 # Application entry point
-├── init_db.py             # Database initialisation + seed data
-├── test_dialog.py         # Manual smoke test for dialogs
-├── modules/
-│   ├── database.py        # Data access layer
-│   ├── shelf_life_control.py
-│   ├── auto_order.py
-│   ├── write_off.py
-│   ├── returns.py
-│   ├── reports.py
-│   ├── audit_log.py
-│   └── planogram.py
-└── ui/
-    ├── operator_tab.py    # Cashier / checkout tab
-    ├── senior_tab.py      # Senior operator dashboard
-    ├── dialogs.py         # Modal dialogs
-    └── notify.py          # System notifications
+shelf-life-system/                    ← this repository
+├── index.html                        ← portfolio website (GitHub Pages)
+├── style.css
+├── images/                           ← screenshots for Figures A.1–A.13
+└── shelf_life_system/                ← application source
+    ├── app.py                        # Application entry point
+    ├── init_db.py                    # Database initialisation + seed data
+    ├── test_dialog.py                # Manual smoke test for dialogs
+    ├── modules/
+    │   ├── database.py               # Data access layer
+    │   ├── shelf_life_control.py
+    │   ├── auto_order.py
+    │   ├── write_off.py
+    │   ├── returns.py
+    │   ├── reports.py
+    │   ├── audit_log.py
+    │   └── planogram.py
+    └── ui/
+        ├── operator_tab.py           # Cashier / checkout tab
+        ├── senior_tab.py             # Senior operator dashboard
+        ├── dialogs.py                # Modal dialogs
+        └── notify.py                 # System notifications
 ```
 
 ## How to run
@@ -61,7 +65,8 @@ cd shelf-life-system
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Initialize the database with seed data
+# 3. Move into the source directory and initialize the database
+cd shelf_life_system
 python init_db.py
 
 # 4. Launch the application
