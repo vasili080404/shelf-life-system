@@ -1,0 +1,57 @@
+{
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Live Demo"
+    },
+    {
+      "type": "body",
+      "text": "Scan the QR code to open the live portfolio page with all 13 application screenshots from Appendix A of the diploma, the architecture overview, and the implementation details."
+    },
+    {
+      "type": "spacer",
+      "pt": 12
+    },
+    {
+      "type": "image",
+      "path": "D:/minimax projects/6/shelf_life_qr.png",
+      "caption": "vasili080404.github.io/shelf-life-system"
+    },
+    {
+      "type": "spacer",
+      "pt": 24
+    },
+    {
+      "type": "h2",
+      "text": "What's Inside"
+    },
+    {
+      "type": "bullet",
+      "text": "<b>Shelf Life Control System</b> — desktop application for automated inventory management at gas station #16, implemented in Python + CustomTkinter + SQLite (3,320 LOC, 17 modules)."
+    },
+    {
+      "type": "bullet",
+      "text": "<b>FEFO logic</b> — automatic First Expired — First Out batch picking, hard block of expired sales."
+    },
+    {
+      "type": "bullet",
+      "text": "<b>Intelligent auto-order</b> — recommendation engine based on 14-day average sales, current stock and planogram."
+    },
+    {
+      "type": "bullet",
+      "text": "<b>Full audit trail</b> — every action logged into the ActionLog table; supplier returns and expired write-offs generate acts."
+    },
+    {
+      "type": "bullet",
+      "text": "<b>13 screenshots (Appendix A)</b> — operator checkout, FEFO search, catalog, sales history, 7-day losses, auto-order, write-off, planogram, returns, audit log."
+    },
+    {
+      "type": "spacer",
+      "pt": 16
+    },
+    {
+      "type": "callout",
+      "text": "Prototype is ready for pilot deployment at gas station #16 and for scaling across the Belorusneft-Gomelobnefteprodukt network."
+    }
+  ]
+}
