@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Система контроля сроков годности — дипломный проект</title>
+<title>Shelf Life Control System — Diploma Project</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
   <div class="container">
-    <p class="kicker">Дипломная работа · 2026 · BGU Кафедра ЦСиТ</p>
-    <h1>Система контроля сроков годности<br>на АЗС №16 «Поколюбичи»</h1>
-    <p class="subtitle">Автоматизация управления товарными запасами с принципом FEFO,
-      интеллектуальным авто-заказом и блокировкой просроченных продаж.
-      Десктопное приложение на Python + CustomTkinter + SQLite.</p>
+    <p class="kicker">Diploma Project · 2026 · BSU Department of Digital Systems &amp; Technologies</p>
+    <h1>Shelf Life Control System<br>for Gas Station #16 «Pokolyubichi»</h1>
+    <p class="subtitle">Inventory automation with FEFO, intelligent auto-ordering
+      and automatic blocking of expired sales. Desktop application built with
+      Python + CustomTkinter + SQLite.</p>
     <div class="badges">
       <span class="badge">Python 3.11</span>
       <span class="badge">CustomTkinter</span>
       <span class="badge">SQLite</span>
       <span class="badge">FEFO</span>
       <span class="badge">BPMN 2.0</span>
-      <span class="badge">3&nbsp;320 строк</span>
-      <span class="badge">17 модулей</span>
+      <span class="badge">3,320 LOC</span>
+      <span class="badge">17 modules</span>
     </div>
     <div class="cta">
-      <a href="#screenshots" class="btn btn-primary">Смотреть скриншоты</a>
-      <a href="#architecture" class="btn btn-secondary">Архитектура</a>
-      <a href="#features" class="btn btn-secondary">Функции</a>
+      <a href="#screenshots" class="btn btn-primary">View screenshots</a>
+      <a href="#architecture" class="btn btn-secondary">Architecture</a>
+      <a href="#features" class="btn btn-secondary">Features</a>
     </div>
   </div>
 </header>
@@ -35,101 +35,101 @@
 <section class="container kpi">
   <div class="kpi-card">
     <div class="kpi-value">60–70%</div>
-    <div class="kpi-label">сокращение ручных операций</div>
+    <div class="kpi-label">reduction in manual operations</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-value">≥50%</div>
-    <div class="kpi-label">снижение потерь от просрочки</div>
+    <div class="kpi-label">decrease in expiry losses</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-value">40–50%</div>
-    <div class="kpi-label">рост точности авто-заказов</div>
+    <div class="kpi-label">growth in auto-order accuracy</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-value">100%</div>
-    <div class="kpi-label">исключение продаж просрочки</div>
+    <div class="kpi-label">expired sales blocked</div>
   </div>
 </section>
 
 <section class="container" id="problem">
-  <h2>Проблема</h2>
-  <p class="lead">На АЗС №16 ручной контроль сроков годности приводил к ошибкам, потерям
-  выручки и зависимости от человеческого фактора. Дублирование данных между 1С
-  и ARM Оператор, отсутствие автоблокировки просроченных продаж, отсутствие
-  FEFO-логики при формировании заказов.</p>
+  <h2>The Problem</h2>
+  <p class="lead">Manual shelf-life control at gas station #16 led to errors,
+  lost revenue and full dependence on human factor. Duplicate data between
+  1C and the Operator ARM, no automatic block of expired sales, no FEFO logic
+  in the ordering process.</p>
 
-  <h2>Решение</h2>
-  <p class="lead">Прототип системы, реализующий принцип FEFO (First Expired — First Out),
-  автоматическое определение статуса партий (Normal / Critical / Expired),
-  блокировку продаж просроченного товара, интеллектуальный авто-заказ на основе
-  средних продаж и планограммы, возврат поставщику и списание с формированием акта.</p>
+  <h2>The Solution</h2>
+  <p class="lead">A prototype system that implements FEFO (First Expired — First Out),
+  automatic batch status detection (Normal / Critical / Expired), hard block of
+  expired sales, intelligent auto-ordering based on average sales and planogram,
+  and supplier return with an act of disposal.</p>
 </section>
 
 <section class="container" id="features">
-  <h2>Реализованные функции</h2>
+  <h2>Implemented Features</h2>
   <div class="grid">
     <div class="card">
       <div class="card-icon">⚡</div>
-      <h3>Автоматический расчёт статуса</h3>
-      <p>Normal · Critical (1–3 дня) · Expired. Цветовая индикация в интерфейсе оператора,
-      автоматическое определение по дате истечения.</p>
+      <h3>Automatic status calculation</h3>
+      <p>Normal · Critical (1–3 days) · Expired. Color-coded indicators in the
+      operator UI, computed automatically from the expiration date.</p>
     </div>
     <div class="card">
       <div class="card-icon">🧮</div>
-      <h3>Авто-расчёт скидок</h3>
-      <p>Процент скидки для критических партий рассчитывается автоматически
-      на основе настраиваемых правил.</p>
+      <h3>Auto discount calculation</h3>
+      <p>Discount percentage for critical batches is computed automatically
+      from configurable rules.</p>
     </div>
     <div class="card">
       <div class="card-icon">🔍</div>
-      <h3>FEFO-выбор партии</h3>
-      <p>При сканировании товара автоматически выбирается партия с ближайшим
-      сроком истечения. Продажа просрочки заблокирована.</p>
+      <h3>FEFO batch picking</h3>
+      <p>When a product is scanned, the batch with the nearest expiry is
+      selected automatically. Selling expired goods is hard-blocked.</p>
     </div>
     <div class="card">
       <div class="card-icon">🛒</div>
-      <h3>Интеллектуальный авто-заказ</h3>
-      <p>Учёт средних продаж за 14 дней, текущих остатков, планограммы,
-      критичности сроков. Рекомендация формируется автоматически.</p>
+      <h3>Intelligent auto-order</h3>
+      <p>Takes into account 14-day average sales, current stock, planogram
+      and criticality. Recommendation is generated automatically.</p>
     </div>
     <div class="card">
       <div class="card-icon">🗑️</div>
-      <h3>Списание просрочки</h3>
-      <p>Массовое списание просроченных партий с автоматическим
-      формированием акта и логированием в ActionLog.</p>
+      <h3>Expired write-off</h3>
+      <p>Mass write-off of expired batches with auto-generated act and
+      full logging into the ActionLog table.</p>
     </div>
     <div class="card">
       <div class="card-icon">↩️</div>
-      <h3>Возврат поставщику</h3>
-      <p>Автоматический выбор партий с критическим сроком (≤14 дней),
-      формирование акта возврата с указанием причины.</p>
+      <h3>Supplier return</h3>
+      <p>Automatic selection of batches with critical expiry (≤ 14 days),
+      return act generated with reason.</p>
     </div>
     <div class="card">
       <div class="card-icon">📋</div>
-      <h3>Планограмма</h3>
-      <p>Цифровое управление размещением товаров на полках с указанием
-      минимальных и максимальных остатков.</p>
+      <h3>Planogram</h3>
+      <p>Digital control of product placement on shelves with min/max
+      stock thresholds per slot.</p>
     </div>
     <div class="card">
       <div class="card-icon">📊</div>
-      <h3>Отчёты</h3>
-      <p>Каталог, история продаж, потери за 7 дней, история списаний,
-      мои заказы, детали заказа, предложение авто-заказа. Экспорт TXT и Excel.</p>
+      <h3>Reports</h3>
+      <p>Catalog, sales history, 7-day losses, write-off history, my orders,
+      order details, auto-order proposal. Export to TXT and Excel.</p>
     </div>
     <div class="card">
       <div class="card-icon">🔐</div>
-      <h3>Полный аудит</h3>
-      <p>Каждое действие пользователя логируется в таблицу ActionLog:
-      кто, когда, что изменил.</p>
+      <h3>Full audit trail</h3>
+      <p>Every user action is logged into the ActionLog table: who, when,
+      what changed.</p>
     </div>
   </div>
 </section>
 
 <section class="container" id="architecture">
-  <h2>Архитектура</h2>
-  <p class="lead">Трёхуровневая модульная архитектура согласно BPMN-диаграммам
-  дипломной работы. Модули связаны только через общую БД, что обеспечивает
-  минимальное сопряжение и простоту тестирования.</p>
+  <h2>Architecture</h2>
+  <p class="lead">Three-tier modular architecture that mirrors the BPMN diagrams
+  from the diploma. Modules communicate only through the shared SQLite database,
+  which keeps coupling minimal and the system easy to test.</p>
 
   <div class="arch">
     <div class="layer">
@@ -159,158 +159,158 @@
     <div class="layer">
       <div class="layer-title">Data Access Layer <span class="layer-sub">modules/database.py</span></div>
       <div class="layer-items">
-        <span>Database class · 10 таблиц SQLite · context manager ·
-        rows_to_dicts · CRUD-методы</span>
+        <span>Database class · 10 SQLite tables · context manager ·
+        rows_to_dicts · CRUD methods</span>
       </div>
     </div>
   </div>
 </section>
 
 <section class="container" id="tech">
-  <h2>Технологический стек</h2>
+  <h2>Technology Stack</h2>
   <div class="tech-grid">
-    <div><strong>Язык:</strong> Python 3.11</div>
-    <div><strong>GUI:</strong> CustomTkinter (модерн-обёртка над Tkinter)</div>
-    <div><strong>БД:</strong> SQLite (10 таблиц, WAL-режим)</div>
-    <div><strong>Экспорт отчётов:</strong> openpyxl (Excel), plain text (TXT)</div>
-    <div><strong>Звук:</strong> winsound (системные уведомления)</div>
-    <div><strong>Тестирование:</strong> ручные smoke-тесты + интеграционный test_modules.py</div>
-    <div><strong>Объём кода:</strong> 3 320 строк Python в 17 файлах</div>
-    <div><strong>Методология требований:</strong> FURPS+</div>
+    <div><strong>Language:</strong> Python 3.11</div>
+    <div><strong>GUI:</strong> CustomTkinter (modern wrapper over Tkinter)</div>
+    <div><strong>Database:</strong> SQLite (10 tables, WAL mode)</div>
+    <div><strong>Report export:</strong> openpyxl (Excel), plain text (TXT)</div>
+    <div><strong>Sound:</strong> winsound (system notifications)</div>
+    <div><strong>Testing:</strong> manual smoke tests + integration test_modules.py</div>
+    <div><strong>Code volume:</strong> 3,320 lines of Python in 17 files</div>
+    <div><strong>Requirements methodology:</strong> FURPS+</div>
   </div>
 </section>
 
 <section class="container" id="screenshots">
-  <h2>Скриншоты приложения (Appendix A)</h2>
-  <p class="lead">Скриншоты соответствуют Figures A.1–A.13 из Appendix A дипломной работы.
-  Полная версия с исходным кодом всех 17 модулей (3 320 строк Python) и схемой БД
-  приведена в основном тексте диплома.</p>
+  <h2>Application Screenshots (Appendix A)</h2>
+  <p class="lead">The figures below correspond to Figures A.1–A.13 from Appendix A
+  of the diploma. The full source code of all 17 modules (3,320 lines of Python)
+  and the database schema are provided in the main body of the thesis.</p>
 
-  <h3 class="section-h3">Figure A.1 · Главная вкладка оператора (касса)</h3>
+  <h3 class="section-h3">Figure A.1 · Operator main tab (checkout)</h3>
   <div class="shots shots-1">
     <a href="images/figA01_operator_main.png" target="_blank" class="shot">
-      <img src="images/figA01_operator_main.png" alt="Главная вкладка оператора" loading="lazy">
-      <div class="shot-caption">Режим Оператора (Касса) — поиск товара по имени/штрих-коду</div>
+      <img src="images/figA01_operator_main.png" alt="Operator main tab" loading="lazy">
+      <div class="shot-caption">Operator Mode (Checkout) — search by name / barcode</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.2 · Поиск товара с автоподбором партии по FEFO</h3>
+  <h3 class="section-h3">Figure A.2 · Product search with FEFO batch picking</h3>
   <div class="shots shots-1">
     <a href="images/figA02_search_fefo.png" target="_blank" class="shot">
-      <img src="images/figA02_search_fefo.png" alt="Поиск товара по штрих-коду" loading="lazy">
-      <div class="shot-caption">Шоколад Алёнка 100г · Партия 1 · Скидка 15% (осталось 2 дня)</div>
+      <img src="images/figA02_search_fefo.png" alt="Product search by barcode" loading="lazy">
+      <div class="shot-caption">Alyonka Chocolate 100 g · Batch 1 · 15% discount (2 days left)</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.3 · Каталог всех товаров в БД (FEFO)</h3>
+  <h3 class="section-h3">Figure A.3 · All-products catalog (FEFO)</h3>
   <div class="shots shots-1">
     <a href="images/figA03_all_products.png" target="_blank" class="shot">
-      <img src="images/figA03_all_products.png" alt="Каталог всех товаров" loading="lazy">
-      <div class="shot-caption">Список всех товаров с сортировкой по сроку годности</div>
+      <img src="images/figA03_all_products.png" alt="All-products catalog" loading="lazy">
+      <div class="shot-caption">Full product list sorted by expiration date</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.4 · История продаж (последние 50)</h3>
+  <h3 class="section-h3">Figure A.4 · Sales history (last 50)</h3>
   <div class="shots shots-1">
     <a href="images/figA04_sales_history.png" target="_blank" class="shot">
-      <img src="images/figA04_sales_history.png" alt="История продаж" loading="lazy">
-      <div class="shot-caption">История продаж с возможностью экспорта в TXT и Excel</div>
+      <img src="images/figA04_sales_history.png" alt="Sales history" loading="lazy">
+      <div class="shot-caption">Sales history with TXT and Excel export</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.5 · Потери от просрочки за последние 7 дней</h3>
+  <h3 class="section-h3">Figure A.5 · Expiry losses over the last 7 days</h3>
   <div class="shots shots-1">
     <a href="images/figA05_losses.png" target="_blank" class="shot">
-      <img src="images/figA05_losses.png" alt="Потери от просрочки" loading="lazy">
-      <div class="shot-caption">Итого потерь за неделю: 192.00 BYN</div>
+      <img src="images/figA05_losses.png" alt="Expiry losses" loading="lazy">
+      <div class="shot-caption">Total 7-day losses: 192.00 BYN</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.6 · Рекомендуемый интеллектуальный авто-заказ</h3>
+  <h3 class="section-h3">Figure A.6 · Recommended intelligent auto-order</h3>
   <div class="shots shots-1">
     <a href="images/figA06_smart_order.png" target="_blank" class="shot">
-      <img src="images/figA06_smart_order.png" alt="Интеллектуальный авто-заказ" loading="lazy">
-      <div class="shot-caption">Рекомендации с учётом остатков, продаж и планограммы</div>
+      <img src="images/figA06_smart_order.png" alt="Intelligent auto-order" loading="lazy">
+      <div class="shot-caption">Recommendation based on stock, sales and planogram</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.7 · Списание просроченных товаров с актом</h3>
+  <h3 class="section-h3">Figure A.7 · Expired-goods write-off with act</h3>
   <div class="shots shots-1">
     <a href="images/figA07_writeoff.png" target="_blank" class="shot">
-      <img src="images/figA07_writeoff.png" alt="Списание просроченных товаров" loading="lazy">
-      <div class="shot-caption">Список просроченных партий + кнопка массового списания</div>
+      <img src="images/figA07_writeoff.png" alt="Expired write-off" loading="lazy">
+      <div class="shot-caption">List of expired batches + mass write-off button</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.8 · История списаний (экспорт TXT / Excel)</h3>
+  <h3 class="section-h3">Figure A.8 · Write-off history (TXT / Excel export)</h3>
   <div class="shots shots-1">
     <a href="images/figA08_writeoff_history.png" target="_blank" class="shot">
-      <img src="images/figA08_writeoff_history.png" alt="История списаний" loading="lazy">
-      <div class="shot-caption">История списаний с актами · Итого: 105 шт</div>
+      <img src="images/figA08_writeoff_history.png" alt="Write-off history" loading="lazy">
+      <div class="shot-caption">Write-off history with acts · Total: 105 units</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.9 · Сохранённые интеллектуальные авто-заказы</h3>
+  <h3 class="section-h3">Figure A.9 · Saved intelligent auto-orders</h3>
   <div class="shots shots-1">
     <a href="images/figA09_my_orders.png" target="_blank" class="shot">
-      <img src="images/figA09_my_orders.png" alt="Мои заказы" loading="lazy">
-      <div class="shot-caption">Список сгенерированных заказов со статусами</div>
+      <img src="images/figA09_my_orders.png" alt="My orders" loading="lazy">
+      <div class="shot-caption">List of generated orders with statuses</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.10 · Главное окно — вкладка Старшего оператора</h3>
+  <h3 class="section-h3">Figure A.10 · Main window — Senior operator tab</h3>
   <div class="shots shots-1">
     <a href="images/figA10_senior_dashboard.png" target="_blank" class="shot">
       <img src="images/figA10_senior_dashboard.png" alt="Senior dashboard" loading="lazy">
-      <div class="shot-caption">Quick indicators: 3 истекающих · 159 продано · 100% FEFO</div>
+      <div class="shot-caption">Quick indicators: 3 expiring · 159 sold · 100% FEFO</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.11 · Планограмма торгового зала</h3>
+  <h3 class="section-h3">Figure A.11 · Sales-floor planogram</h3>
   <div class="shots shots-1">
     <a href="images/figA11_planogram.png" target="_blank" class="shot">
-      <img src="images/figA11_planogram.png" alt="Планограмма" loading="lazy">
-      <div class="shot-caption">Размещение товаров на полках с Min/Max остатками (Стеллаж-A/Б, Холодильник-1)</div>
+      <img src="images/figA11_planogram.png" alt="Planogram" loading="lazy">
+      <div class="shot-caption">Product placement on shelves with Min / Max stock (Shelf-A / B, Fridge-1)</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.12 · Возвраты поставщику (кандидаты, срок ≤ 14 дней)</h3>
+  <h3 class="section-h3">Figure A.12 · Supplier returns (candidates, expiry ≤ 14 days)</h3>
   <div class="shots shots-1">
     <a href="images/figA12_returns.png" target="_blank" class="shot">
-      <img src="images/figA12_returns.png" alt="Возвраты поставщику" loading="lazy">
-      <div class="shot-caption">Кандидаты на возврат + история возвратов с актами</div>
+      <img src="images/figA12_returns.png" alt="Supplier returns" loading="lazy">
+      <div class="shot-caption">Return candidates + return history with acts</div>
     </a>
   </div>
 
-  <h3 class="section-h3">Figure A.13 · Журнал аудита (Audit Trail)</h3>
+  <h3 class="section-h3">Figure A.13 · Audit trail (ActionLog)</h3>
   <div class="shots shots-1">
     <a href="images/figA13_audit_log.png" target="_blank" class="shot">
-      <img src="images/figA13_audit_log.png" alt="Журнал аудита" loading="lazy">
-      <div class="shot-caption">Полный аудит всех действий пользователей (CRITICAL_ALERT — батч 1, days=2)</div>
+      <img src="images/figA13_audit_log.png" alt="Audit trail" loading="lazy">
+      <div class="shot-caption">Full audit of all user actions (CRITICAL_ALERT — batch 1, days = 2)</div>
     </a>
   </div>
 </section>
 
 <section class="container" id="howto">
-  <h2>Как запустить локально</h2>
+  <h2>How to Run Locally</h2>
   <div class="code-block">
-<pre><code># 1. Клонировать репозиторий
+<pre><code># 1. Clone the repository
 git clone https://github.com/vasili080404/shelf-life-system.git
 cd shelf-life-system
 
-# 2. Установить зависимости
+# 2. Install dependencies
 pip install customtkinter openpyxl
 
-# 3. Инициализировать БД
+# 3. Initialize the database
 python init_db.py
 
-# 4. Запустить приложение
+# 4. Launch the application
 python app.py
 
-# Опционально: режим скриншотов для диплома
+# Optional: screenshot mode for the diploma
 python app.py --tab=senior --screenshots=D:\shots --delay=2000
 
-# CLI-режимы: --tab=senior, --open=my_orders,
+# CLI modes: --tab=senior, --open=my_orders,
 # --open=writeoff_history, --open=action_log, --open=planogram
 </code></pre>
   </div>
@@ -318,10 +318,10 @@ python app.py --tab=senior --screenshots=D:\shots --delay=2000
 
 <footer class="footer">
   <div class="container">
-    <p>Дипломная работа · 2026 · BGU, кафедра ЦСиТ, специальность
-    «Управление информационными ресурсами» (1-26 03 01)</p>
-    <p>Прототип готов к пилотному внедрению на АЗС №16 и масштабированию
-    на сеть автозаправочных станций РУП «Белоруснефть-Гомелоблнефтепродукт».</p>
+    <p>Diploma Project · 2026 · BSU, Department of Digital Systems and Technologies,
+    specialty «Information Resources Management» (1-26 03 01)</p>
+    <p>The prototype is ready for pilot deployment at gas station #16 and for
+    scaling across the Belorusneft-Gomelobnefteprodukt network of stations.</p>
   </div>
 </footer>
 
