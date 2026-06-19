@@ -84,9 +84,6 @@ python app.py --open=my_orders
 python app.py --open=writeoff_history
 python app.py --open=action_log
 python app.py --open=planogram
-
-# Screenshot mode (for the diploma Appendix A)
-python app.py --tab=senior --screenshots=D:\shots --delay=2000
 ```
 
 ## Live portfolio
